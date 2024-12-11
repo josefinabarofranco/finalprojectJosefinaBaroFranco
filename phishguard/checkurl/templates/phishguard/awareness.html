@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness - Phishing Tips</title>
+    <link rel="stylesheet" href="{% static 'bootstrapSlate.css' %}">
 </head>
 <body>
+    <div class="container">
+        <h1>Phishing Awareness Tips</h1>
+        <ul>
+            <li>Look out for unfamiliar sender email addresses.</li>
+            <li>Do not click on suspicious links or attachments.</li>
+            <li>Always check the URL of a website for spelling errors or unusual characters.</li>
+            <li>Make sure a website uses HTTPS and shows a secure connection.</li>
+            <li>If you are unsure, contact the company directly via their official website.</li>
+        </ul>
 
+        <div class="mt-4">
+            <a href="{% url 'home' %}" class="btn btn-primary">Go Back to URL Check</a>
+        </div>
+    </div>
 </body>
 </html>

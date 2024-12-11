@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'bootstrapSlate.css' %}">
 </head>
 <body>
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Here you can manage your account and see your URL check results.</p>
 
+        <div class="mt-4">
+            <a href="{% url 'home' %}" class="btn btn-primary">Check Another URL</a>
+            <a href="{% url 'register' %}" class="btn btn-secondary">Logout</a>
+        </div>
+    </div>
 </body>
 </html>

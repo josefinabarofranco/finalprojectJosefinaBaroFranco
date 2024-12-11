@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Check Your URL</title>
+    <link rel="stylesheet" href="{% static 'bootstrapSlate.css' %}">
 </head>
 <body>
+    <div class="container">
+        <h1>Check Your URL</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="url">Enter a URL to check:</label>
+                <input type="url" name="url" class="form-control" id="url" required placeholder="e.g. http://example.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Check URL</button>
+        </form>
 
+        <div class="mt-4">
+            <a href="{% url 'register' %}" class="btn btn-secondary">Register/Login</a>
+        </div>
+    </div>
 </body>
 </html>
