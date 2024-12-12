@@ -8,7 +8,10 @@
 
 ## Description
 
-
+This project uses TotalVirus' API to check urls for potential phishing scams.
+Users can check urls without logging in but can create an account to keep track of urls they have checked.
+There are a total of 4 pages: home page, registration page, phishing awareness page, and a dashboard.
+Dashboard page can only be accessed by registered users. 
 
 
 ### Installing
@@ -38,6 +41,6 @@ Josefina Baro
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [ChatGPT](https)
+* [ChatGPT](https://chatgpt.com/share/675aa39a-9cd0-800d-9027-37a323bea3c1)
 * [Bootswatch](https://bootswatch.com/)
 * [VirusTotal](https://docs.virustotal.com/reference/overview)
