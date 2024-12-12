@@ -57,7 +57,7 @@ def handle_login(request):
         messages.error(request, 'Invalid credentials. Please try again.')
         return render(request, 'phishguard/register.html')
 
-@login_required
+@login_required(login_url='register')
 def userdash(request):
     if request.method == 'POST':
         url = request.POST.get('url')
