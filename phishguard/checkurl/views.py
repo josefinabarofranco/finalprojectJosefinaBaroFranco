@@ -3,15 +3,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .api import check_url_with_virustotal
 
 # Home page
 def home(request):
+    result = None
     if request.method == 'POST':
         user_url = request.POST.get('url')
+        result = check_url_with_virustotal(user_url)
 
-        result = check_url_api(user_url)
-        return render(request, 'phishguard/home.html', {'result': result})
-    return render(request, 'phishguard/home.html')
+    return render(request, 'phishguard/home.html', {'result': result})
 
 # Awareness page (phishing tips)
 def awareness(request):

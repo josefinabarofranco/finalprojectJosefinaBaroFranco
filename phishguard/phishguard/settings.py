@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -82,6 +83,10 @@ DATABASES = {
 }
 
 
+LOGIN_REDIRECT_URL = 'userdash'
+LOGIN_URL = 'login'
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -120,6 +125,6 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-LOGIN_REDIRECT_URL = 'userdash'
-LOGIN_URL = 'login'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+VIRUS_API_KEY = os.getenv("2b34cf0fdd5d75376fe362018356f7235d47f2dbacde6253e8a2ff4273f344aa")
