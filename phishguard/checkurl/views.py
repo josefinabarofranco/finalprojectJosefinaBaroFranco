@@ -4,6 +4,8 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .api import check_url_with_virustotal
+from django.conf import settings
+import requests
 
 # Home page
 def home(request):
