@@ -1,14 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awareness - Phishing Tips</title>
-    <link rel="stylesheet" href="{% static 'bootstrapSolar.css' %}">
-</head>
-<body>
-    <div class="container">
+{% extends 'phishguard/base.html' %}
+
+{% block title %}Awareness - Phishing Tips{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
         <h1>General Phishing Awareness Tips</h1>
         <ul>
             <li>Look out for unfamiliar sender email addresses.</li>
@@ -20,16 +15,16 @@
             <li>Stay cautious on public Wi-Fi.</li>
         </ul>
     </div>
-    <div class="container">
+    <div class="container mt-4">
         <h1>Types of Phishing Attacks</h1>
         <ul>
             <li>Spear Phishing</li>
             <li>Clone Phishing</li>
             <li>Whaling</li>
-            <li>Smishing</li
+            <li>Smishing</li>
         </ul>
     </div>
-    <div class="container">
+    <div class="container mt-4">
         <h1>Tips for Employers</h1>
         <ul>
             <li>Alert employees to the risks.</li>
@@ -37,10 +32,8 @@
             <li>Develop a culture of awareness.</li>
             <li>Identify available training resources and train employees how to spot phishing.</li>
         </ul>
-
         <div class="mt-4">
             <a href="{% url 'home' %}" class="btn btn-primary">Go Back to URL Check</a>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

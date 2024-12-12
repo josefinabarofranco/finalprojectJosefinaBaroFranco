@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Check Your URL</h1>
+        <h1>Suspicious Link? Check Your URL</h1>
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -17,6 +17,7 @@
                 <input type="url" name="url" class="form-control" id="url" required placeholder="e.g. http://example.com">
             </div>
             <button type="submit" class="btn btn-primary">Check URL</button>
+            <a href="{% url 'awareness' %}" class="btn btn-warning">Learn about Phishing</a>
         </form>
 
         <div class="mt-4">
