@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import SavedURL
+from .api import check_url_with_virustotal
 
 # Home page
 def home(request):
