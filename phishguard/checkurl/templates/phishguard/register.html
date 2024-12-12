@@ -6,7 +6,6 @@
 <div class="container">
     <h1>Register or Login</h1>
 
-
     {% if messages %}
         <div class="alert alert-info">
             {% for message in messages %}
@@ -49,17 +48,6 @@
             </div>
             <button type="submit" class="btn btn-info" name="register">Register</button>
         </form>
-        {% if form.errors %}
-            <div class="alert alert-danger mt-3">
-                <ul>
-                    {% for field in form %}
-                        {% if field.errors %}
-                            <li>{{ field.label }}: {{ field.errors }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
     </div>
 </div>
 {% endblock %}

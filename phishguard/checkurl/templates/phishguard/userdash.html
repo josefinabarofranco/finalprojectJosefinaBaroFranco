@@ -1,21 +1,41 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <link rel="stylesheet" href="{% static 'bootstrapSolar.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to Your Dashboard</h1>
-        <p>Here you can manage your account and see your URL check results.</p>
+{% extends "base.html" %}
 
-        <div class="mt-4">
-            <a href="{% url 'home' %}" class="btn btn-primary">Check Another URL</a>
-            <a href="{% url 'register' %}" class="btn btn-secondary">Logout</a>
-        </div>
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Here you can manage your account and see your URL check results.</p>
+
+    <div class="mt-4">
+        <h2>Saved URLs</h2>
+        {% if saved_urls %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>URL</th>
+                        <th>Date Saved</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for url in saved_urls %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ url.url }}</td>
+                        <td>{{ url.created_at|date:"M d, Y H:i" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No URLs saved yet. Start checking URLs!</p>
+        {% endif %}
     </div>
-</body>
-</html>
+
+    <div class="mt-4">
+        <a href="{% url 'home' %}" class="btn btn-primary">Check Another URL</a>
+        <a href="{% url 'register' %}" class="btn btn-secondary">Logout</a>
+    </div>
+</div>
+{% endblock %}

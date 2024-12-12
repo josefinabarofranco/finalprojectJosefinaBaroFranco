@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .models import SavedURL
 
 # Home page
 def home(request):
@@ -10,6 +11,8 @@ def home(request):
     if request.method == "POST":
         url = request.POST.get("url")
         if url:
+            if request.user.is_authenticated:
+                SavedURL.objects.create(user=request.user, url=url)
             result = check_url_with_virustotal(url)
     return render(request, 'phishguard/home.html', {'result': result})
 
@@ -56,4 +59,5 @@ def handle_login(request):
 
 @login_required
 def userdash(request):
-    return render(request, 'phishguard/userdash.html')
+    saved_urls = SavedURL.objects.filter(user=request.user).order_by('-created_at')
+    return render(request, 'phishguard/userdash.html', {'saved_urls': saved_urls})
