@@ -29,6 +29,18 @@
           <a class="nav-link {% if request.resolver_match.url_name == 'userdash' %}active{% endif %}" href="{% url 'userdash' %}">Dashboard</a>
         </li>
       </ul>
+
+      <ul class="navbar-nav ms-auto">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <span class="navbar-text text-white">Hello, {{ user.username }}!</span>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'register' %}active{% endif %}" href="{% url 'register' %}">Login/Register</a>
+          </li>
+        {% endif %}
+      </ul>
     </div>
   </div>
 </nav>

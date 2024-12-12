@@ -59,5 +59,9 @@ def handle_login(request):
 
 @login_required
 def userdash(request):
-    saved_urls = SavedURL.objects.filter(user=request.user).order_by('-created_at')
-    return render(request, 'phishguard/userdash.html', {'saved_urls': saved_urls})
+    if request.method == 'POST':
+        url = request.POST.get('url')
+        if url:
+            SavedURL.objects.create(url=url, user=request.user)
+    user_urls = SavedURL.objects.filter(user=request.user)
+    return render(request, 'phishguard/userdash.html', {'user_urls': user_urls})
