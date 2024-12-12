@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register/Login</title>
-    <link rel="stylesheet" href="{% static 'bootstrapSlate.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrapSolar.css' %}">
 </head>
 <body>
     <div class="container">
@@ -23,7 +23,7 @@
                     <label for="login-password">Password:</label>
                     <input type="password" name="password" class="form-control" id="login-password" required placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-success">Login</button>
             </form>
         </div>
 
@@ -39,7 +39,8 @@
                     <label for="password">Password:</label>
                     <input type="password" name="password" class="form-control" id="password" required placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-info">Register</button>
+                <a href="{% url 'awareness' %}" class="btn btn-warning">Learn about Phishing</a>
             </form>
         </div>
     </div>
