@@ -56,7 +56,9 @@ ROOT_URLCONF = 'phishguard.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,4 +127,4 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'userdash'
 LOGIN_URL = 'login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-VIRUSTOTAL_API_KEY = os.getenv('VIRUSTOTAL_API_KEY', 'KEY')
+VIRUSTOTAL_API_KEY = os.getenv('VIRUSTOTAL_API_KEY', '2b34cf0fdd5d75376fe362018356f7235d47f2dbacde6253e8a2ff4273f344aa')

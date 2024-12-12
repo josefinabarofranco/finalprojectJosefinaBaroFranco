@@ -14,5 +14,19 @@
         </div>
         <button type="submit" class="btn btn-primary mt-2">Check URL</button>
     </form>
+
+    {% if result %}
+    <div class="mt-4">
+        <h2>Result:</h2>
+        <p>Status: {{ result.status }}</p>
+        {% if result.status == "suspicious" %}
+            <p>This URL has been flagged as suspicious!</p>
+        {% elif result.status == "safe" %}
+            <p>This URL is safe.</p>
+        {% else %}
+            <p>Error: {{ result.message }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

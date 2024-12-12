@@ -10,10 +10,10 @@ import requests
 # Home page
 def home(request):
     result = None
-    if request.method == 'POST':
-        user_url = request.POST.get('url')
-        result = check_url_with_virustotal(user_url)
-
+    if request.method == "POST":
+        url = request.POST.get("url")
+        if url:
+            result = check_url_with_virustotal(url)
     return render(request, 'phishguard/home.html', {'result': result})
 
 # Awareness page (phishing tips)
